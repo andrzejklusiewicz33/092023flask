@@ -41,3 +41,5 @@ if __name__ == '__main__':
 
 #61. Zadbaj o to by każdy ekran miał swój plik html i wyświetlał go przy
 #wejściu na dany adres
+
+#klusiewicz@jsystems.pl
