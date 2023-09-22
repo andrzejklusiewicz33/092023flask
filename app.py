@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app = Flask(__name__)
 
@@ -7,9 +7,12 @@ app = Flask(__name__)
 def index():  # put application's code here
     return 'Hello World!'
 
+@app.route('/show_players')
+def show_players():
+    return "<h1><font color='red'><b>Tu będzie lista wszystkich zawodników</b></font></h1>"
 @app.route('/about')
 def about():
-    return "Autorem tego programu jest Mapet który lubi pierogi i bigos"
+    return render_template("about.html")
 
 
 if __name__ == '__main__':
