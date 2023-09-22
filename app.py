@@ -20,3 +20,6 @@ if __name__ == '__main__':
 
 #60. Dodaj do aplikacji ekran /show_players który
 #będzie wyświetlał jakiś tekst. Przetestuj działanie.
+
+#61. Zadbaj o to by każdy ekran miał swój plik html i wyświetlał go przy
+#wejściu na dany adres
