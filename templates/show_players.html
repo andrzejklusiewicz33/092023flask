@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'menu.html' %}
+<h1>Lista zawodników</h1>
+<table border="1">
+    <tr><th>ID</th><th>Imię</th><th>Nazwisko</th></tr>
+    {% for p in players %}
+        <tr><td>{{ p.id }}</td><td>{{ p.first_name }}</td><td>{{ p.last_name }}</td></tr>
+    {% endfor %}
+</table>
+</body>
+</html>

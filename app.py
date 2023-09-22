@@ -2,17 +2,35 @@ from flask import Flask,render_template
 
 app = Flask(__name__)
 
+class Player:
+    def __init__(self,id,fn,ln):
+        self.id=id
+        self.first_name=fn
+        self.last_name=ln
+    def __str__(self):
+        return str(self.__dict__)
+
+def get_players_all():
+    return [
+        Player(1,'Andrzej','Klusiewicz'),
+        Player(2,"Druga",'Osoba'),
+        Player(3, "Trzecia","Osoba")
+
+    ]
 
 @app.route('/')
 def index():  # put application's code here
-    return 'Hello World!'
+    return render_template("index.html")
 
 @app.route('/show_players')
 def show_players():
-    return "<h1><font color='red'><b>Tu będzie lista wszystkich zawodników</b></font></h1>"
+    # for p in get_players_all():
+    #     print(p)
+    return render_template("show_players.html",players=get_players_all())
 @app.route('/about')
 def about():
-    return render_template("about.html")
+    used_languages=['Python','HTML','CSS','JavaScript']
+    return render_template("about.html",first_name="Andrzej",last_name="Klusiewicz",langs=used_languages)
 
 
 if __name__ == '__main__':
